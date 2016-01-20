@@ -7,7 +7,7 @@ NUM_OF_NODES = 1
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
-  provisioner = Vagrant::Util::Platform.windows? ? :guest_ansible : :ansible
+  #provisioner = Vagrant::Util::Platform.windows? ? :guest_ansible : :ansible
 
   (1..NUM_OF_NODES).each do |i|
     name = "node-#{i}"
@@ -21,9 +21,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         d.pull_images "ubuntu:trusty"
       end
 
-      node.vm.provision provisioner do |ansible|
-        ansible.playbook = "playbook.yml"
-      end
+      # node.vm.provision provisioner do |ansible|
+      #   ansible.playbook = "playbook.yml"
+      # end
     end
   end
 end

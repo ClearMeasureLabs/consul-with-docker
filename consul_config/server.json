@@ -1,0 +1,14 @@
+{
+  "node_name": "server",
+  "ui": true,
+  "server": true,
+  "bootstrap": true,
+  "dns_config": {
+    "allow_stale": false
+  },
+  "client_addr": "0.0.0.0",
+  "advertise_addr": "192.168.33.11",
+  "data_dir": "/tmp/consul",
+  "log_level": "DEBUG"
+}
+
